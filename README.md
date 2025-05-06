@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# 🚀 PromptPath
 
-## Project info
+**PromptPath** is a powerful prompt engineering platform designed for creatives, marketers, and developers to craft, optimize, organize, and share high-quality AI prompts across models like ChatGPT, MidJourney, and Stable Diffusion.
 
-**URL**: https://lovable.dev/projects/67372f47-9c07-4c4b-aabb-6040b89fefe9
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🧩 Project Overview
 
-**Use Lovable**
+PromptPath helps users:
+- Write better prompts with AI-powered suggestions.
+- Organize prompts with tags, folders, and versioning.
+- Collaborate and share prompts with teams or the public.
+- Explore a community library of tested, rated prompts.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/67372f47-9c07-4c4b-aabb-6040b89fefe9) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✨ Features
 
-**Use your preferred IDE**
+- **🔐 Authentication & Profiles**  
+  Sign up, log in with email or OAuth (Google, GitHub). Manage your profile and preferences.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **✍️ Prompt Crafting & Optimization**  
+  Create prompts, choose AI model type, and get real-time feedback for improvement.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **📂 Prompt Management**  
+  Save prompts to your personal library with tags and folders. Track versions and changes.
 
-Follow these steps:
+- **🌍 Community Library**  
+  Browse public prompts, view details, rate, and duplicate them for your own use.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **🔎 Search & Filtering**  
+  Find prompts by keyword, tag, model type, date, or popularity.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **👥 Sharing & Collaboration**  
+  Share prompts with unique links, set visibility (public/private/team-only), and collaborate on optimization.
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **🛡️ Admin & Moderation**  
+  Admin interface for managing users, content, and reported prompts.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## 🛠️ Tech Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+**Frontend:**
+- [Next.js](https://nextjs.org/) (React Framework)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [NextAuth.js](https://next-auth.js.org/) for authentication
 
-**Use GitHub Codespaces**
+**Backend:**
+- Node.js + Express (API)
+- PostgreSQL (via Prisma ORM)
+- Redis (for caching)
+- OpenAI API integration
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**Deployment:**
+- Vercel (Frontend)
+- Render or Railway (Backend)
+- Upstash Redis / Redis Enterprise
+- GitHub Actions (CI/CD)
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🧪 Local Development Setup
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Clone the repo:**
 
-## How can I deploy this project?
+```bash
+git clone https://github.com/brinyavalos/PromptPathApp.git
+cd PromptPathApp
 
-Simply open [Lovable](https://lovable.dev/projects/67372f47-9c07-4c4b-aabb-6040b89fefe9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
