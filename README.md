@@ -70,3 +70,9 @@ PromptPath helps users:
 git clone https://github.com/brinyavalos/PromptPathApp.git
 cd PromptPathApp
 
+## 🧠 Project Documentation
+
+- 📄 [Project Planning Document (PDF)](./_planning.pdf)
+- 📊 [Project Prompts](./_prompts.pdf)
+
+
