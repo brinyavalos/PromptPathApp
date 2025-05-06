@@ -64,8 +64,8 @@ PromptPath helps users:
 
 ## 🧠 Project Documentation
 
-- 📄 [Project Planning Document (PDF)](./_planning.pdf)
-- 📊 [Project Prompts](./_prompts.pdf)
+- 📄 [Project Planning Document (PDF)](docs/_planning.pdf)
+- 📊 [Project Prompts](docs/_prompts.pdf)
 
 1. **Clone the repo:**
 
