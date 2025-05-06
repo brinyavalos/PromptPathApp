@@ -5,33 +5,32 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Eye, EyeOff } from 'lucide-react';
 
 interface AuthFormProps {
   type: 'login' | 'register';
   onSubmit: (data: any) => void;
+  loading?: boolean;
 }
 
-const AuthForm = ({ type, onSubmit }: AuthFormProps) => {
+const AuthForm = ({ type, onSubmit, loading = false }: AuthFormProps) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     
-    try {
-      const data = type === 'login' 
-        ? { email, password } 
-        : { name, email, password };
-      
-      await onSubmit(data);
-    } catch (error) {
-      console.error('Authentication error:', error);
-    } finally {
-      setLoading(false);
-    }
+    const data = type === 'login' 
+      ? { email, password } 
+      : { name, email, password };
+    
+    onSubmit(data);
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -58,6 +57,7 @@ const AuthForm = ({ type, onSubmit }: AuthFormProps) => {
                 onChange={(e) => setName(e.target.value)} 
                 placeholder="Your name"
                 required
+                disabled={loading}
               />
             </div>
           )}
@@ -71,6 +71,7 @@ const AuthForm = ({ type, onSubmit }: AuthFormProps) => {
               onChange={(e) => setEmail(e.target.value)} 
               placeholder="you@example.com"
               required
+              disabled={loading}
             />
           </div>
           
@@ -83,14 +84,30 @@ const AuthForm = ({ type, onSubmit }: AuthFormProps) => {
                 </Link>
               )}
             </div>
-            <Input 
-              id="password" 
-              type="password" 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-              placeholder="••••••••"
-              required
-            />
+            <div className="relative">
+              <Input 
+                id="password" 
+                type={showPassword ? "text" : "password"} 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                placeholder="••••••••"
+                required
+                disabled={loading}
+                className="pr-10"
+              />
+              <button 
+                type="button" 
+                onClick={togglePasswordVisibility} 
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground"
+                tabIndex={-1}
+              >
+                {showPassword ? (
+                  <EyeOff className="h-4 w-4" />
+                ) : (
+                  <Eye className="h-4 w-4" />
+                )}
+              </button>
+            </div>
           </div>
           
           <Button 
@@ -111,10 +128,26 @@ const AuthForm = ({ type, onSubmit }: AuthFormProps) => {
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            <Button variant="outline" type="button" className="border-border">
+            <Button 
+              variant="outline" 
+              type="button" 
+              className="border-border"
+              disabled={loading}
+              onClick={() => {
+                onSubmit({ provider: 'google' });
+              }}
+            >
               Google
             </Button>
-            <Button variant="outline" type="button" className="border-border">
+            <Button 
+              variant="outline" 
+              type="button" 
+              className="border-border"
+              disabled={loading}
+              onClick={() => {
+                onSubmit({ provider: 'github' });
+              }}
+            >
               GitHub
             </Button>
           </div>
